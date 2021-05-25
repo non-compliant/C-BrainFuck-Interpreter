@@ -36,6 +36,12 @@ int main(int argc, char *argv[])
 	operator = 0;
 	bracketcount = 0;
 	srccode = fopen(argv[1], "r");
+
+	if(srccode == NULL)
+	{
+		fprintf(stderr, "Unable to open file %s", argv[1]);
+		return -1;
+	}
 	
 	// Parser
 	while(operator != EOF)
@@ -52,7 +58,7 @@ int main(int argc, char *argv[])
 
 	if((bracketcount % 2) == 1)
 	{
-		puts("ERROR: Unbalanced brackets.");
+		fputs("Unbalanced brackets.\r\n", stderr);
 		return -1;
 	}
 	
