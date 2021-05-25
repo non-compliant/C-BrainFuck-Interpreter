@@ -56,6 +56,8 @@ int main(int argc, char *argv[])
 		
 	}
 
+	fclose(srccode);
+
 	if((bracketcount % 2) == 1)
 	{
 		fputs("Unbalanced brackets.\r\n", stderr);
