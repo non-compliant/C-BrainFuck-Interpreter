@@ -114,5 +114,7 @@ int main(int argc, char *argv[])
 		else if(opcodes[i] == '.') putchar(*ptr);
 	}
 	
+	free(opcodes);
+	
 	return 0;
 }
